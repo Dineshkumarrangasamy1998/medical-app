@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+  /* sensible defaults */
+  html,
+  body,
+  #app {
+    height: 100%;
+    background-color: theme("colors.gray.50");
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md bg-primary-500 text-white px-3 py-2 text-sm font-medium hover:bg-primary-600 disabled:opacity-50;
+  }
+
+  .input {
+    @apply w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400;
+  }
+
+  .card {
+    @apply bg-white rounded-lg border border-gray-200 shadow-card p-4;
+  }
+
+  .dropdown {
+    @apply relative inline-block w-full;
+  }
+
+  .select {
+    @apply w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400;
+  }
+
+  .form-row {
+    @apply grid gap-2 md:grid-cols-2;
+  }
+
+
+  label.required::after {
+    content: " *";
+    color: theme("colors.red.600");
+  }
+}
+
+:root {
+  /* Increased heights */
+  --easy-table-header-height: 70px;
+  --easy-table-body-row-height: 44px;
+  --easy-table-footer-height: 44px;
+
+  /* Keep or redefine borders */
+  --easy-table-border: 1px solid #e0e0e0;
+  --easy-table-row-border: 1px solid #e0e0e0;
+
+  /* Optional: tweak padding if needed with taller rows */
+  --easy-table-header-item-padding: 0 12px;
+  --easy-table-body-item-padding: 0 12px;
+  --easy-table-footer-padding: 0 8px;
+}
+
+/* Rounded corners + clip inner table */
+.vue3-easy-data-table {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  border: var(--easy-table-border);
+}
+
+.vue3-easy-data-table__body tr td, .vue3-easy-data-table__header tr th {
+  padding-bottom: 20px !important;
+  padding-top: 20px !important;
+  font-size: 14px !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: theme("colors.gray.400");
+}
+.vue3-easy-data-table__footer {
+  padding: 20px !important;
+}
+.pagination__rows-per-page{
+  display: none !important;
+}
