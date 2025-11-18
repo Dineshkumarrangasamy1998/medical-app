@@ -1,0 +1,1 @@
+const i=t=>typeof t=="string"&&t.trim().length>0,r=(t,e)=>(t??"").trim().length>=e,o=t=>{const e=(t??"").trim();return e?/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e):!1},s=t=>(t??"").replace(/\D/g,""),a=t=>s(t).length===10,g=t=>{if(!t)return!1;const e=new Date().toISOString().substring(0,10);return t<=e};export{a,o as b,g as c,r as h,i};
